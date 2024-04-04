@@ -165,7 +165,6 @@ install_rpm-ostree() {
         fi
 
         $SUDO curl -sLo /etc/pki/rpm-gpg/nordvpn_public.asc "${PUB_KEY}"
-        $SUDO curl -sLo /etc/yum.repos.d/nordvpn.repo "${repo}"
 		$SUDO cat << EOF > /etc/yum.repos.d/nordvpn.repo
 [NordVPN]
 name=NordVPN

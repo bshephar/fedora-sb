@@ -10,7 +10,7 @@ COPY --from=docker.io/mikefarah/yq /usr/bin/yq /usr/bin/yq
 RUN bash <(curl -sSf https://raw.githubusercontent.com/bshephar/fedora-sb/main/nordvpn-install.sh)
 
 RUN rpm-ostree override remove firefox firefox-langpacks && \
-    rpm-ostree install 'gcc-c++' gcc glib glib2-static krb5-workstation libvirt lld make neovim nordvpn pre-commit ripgrep zsh && \
+    rpm-ostree install 'gcc-c++' gcc glib glib2-static krb5-workstation libvirt lld make neovim pre-commit ripgrep zsh && \
 
     sed -i 's/#AutomaticUpdatePolicy.*/AutomaticUpdatePolicy=stage/' /etc/rpm-ostreed.conf && \
     systemctl enable rpm-ostreed-automatic.timer && \
